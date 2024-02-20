@@ -1,14 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import ActorDetail from '../views/ActorDetail.vue'
+import ActorListVue from '../views/ActorList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'actorList',
+      component: ActorListVue
     },
+    {
+      path: '/actor/:id',
+      name: 'actorDetail',
+      component: ActorDetail,
+      props: true // Pass route params as props to the component
+    }
   ]
 })
 
